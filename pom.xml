@@ -22,7 +22,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<artifactId>Acme-Starters-C</artifactId>
-	<name>Acme-Starters-C-G037</name>
 	<!-- Omit the version tag below unless it's different from the Acme Framework version -->
 	<!-- <version>X.Y.Z</version> --> 
 	<packaging>war</packaging>
