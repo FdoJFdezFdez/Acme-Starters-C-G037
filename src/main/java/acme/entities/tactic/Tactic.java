@@ -1,5 +1,5 @@
 
-package acme.entities.Tactic;
+package acme.entities.tactic;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
