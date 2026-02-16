@@ -1,6 +1,8 @@
 
 package acme.entities.strategy;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,7 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
@@ -16,6 +21,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MomentHelper;
 import acme.realms.Fundraiser;
 import lombok.Getter;
 import lombok.Setter;
@@ -57,17 +63,43 @@ public class Strategy extends AbstractEntity {
 	@Column
 	private String				moreInfo;
 
-	//getMonthsActive() 
-	//getExpectedPercentage() 
+
+	@Valid
+	@Transient
+	public Double getMonthsActive() {
+
+		if (this.startMoment == null || this.endMoment == null)
+			return 0.0;
+
+		if (MomentHelper.isAfter(this.startMoment, this.endMoment))
+			return 0.0;
+
+		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
+
+		return (double) duration.get(ChronoUnit.MONTHS);
+
+	}
+
+
+	@Transient
+	@Autowired
+	private StrategyRepository repo;
+
+
+	@Transient
+	public Double getExpectedPercentage() {
+		return this.repo.calculateExpectedPercentage(this.getId());
+	};
+
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				draftMode;
+	private Boolean		draftMode;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Fundraiser			fundraiser;
+	private Fundraiser	fundraiser;
 
 }
