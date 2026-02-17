@@ -94,7 +94,7 @@ public class Invention extends AbstractEntity {
 		Money money = new Money();
 
 		money.setAmount(cost);
-		money.setCurrency("EUR");
+		// money.setCurrency("EUR");
 
 		return money;
 	}
