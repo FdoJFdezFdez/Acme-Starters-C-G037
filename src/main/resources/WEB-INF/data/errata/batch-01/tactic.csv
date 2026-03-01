@@ -1,4 +1,4 @@
-key,key:strategy,name,notes,expectedPercentage,kind
+key,key:strategy,name,notes,expectedPercentage,tacticKind
 # Base
 tactic-01,"","","","",""
 # Name
