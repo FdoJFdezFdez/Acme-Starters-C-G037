@@ -92,7 +92,11 @@ public class Strategy extends AbstractEntity {
 
 	@Transient
 	public Double getExpectedPercentage() {
-		return this.repo.calculateExpectedPercentage(this.getId());
+		Double res = this.repo.calculateExpectedPercentage(this.getId());
+		if (res == null)
+			return 0.0;
+		else
+			return res;
 	};
 
 
