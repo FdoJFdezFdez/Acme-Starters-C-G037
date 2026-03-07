@@ -48,7 +48,7 @@ public class AnyCampaignListService extends AbstractService<Any, Campaign> {
 	public void unbind() {
 		super.unbindObjects(this.campaigns, //
 			"ticker", "name", "description", "startMoment", //
-			"endMoment", "spokesperson.identity.fullName");
+			"endMoment", "spokesperson.identity.fullName", "moreInfo");
 	}
 
 }
