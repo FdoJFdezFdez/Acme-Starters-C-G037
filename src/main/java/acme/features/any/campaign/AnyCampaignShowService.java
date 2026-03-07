@@ -53,7 +53,7 @@ public class AnyCampaignShowService extends AbstractService<Any, Campaign> {
 	public void unbind() {
 		super.unbindObject(this.campaign, //
 			"ticker", "name", "description", "startMoment", //
-			"endMoment", "spokesperson.identity.fullName");
+			"endMoment", "spokesperson.identity.fullName", "moreInfo");
 	}
 
 }
