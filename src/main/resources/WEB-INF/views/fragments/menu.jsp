@@ -43,7 +43,14 @@
 			<acme:menu-suboption code="master.menu.spokesperson.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.sponsor" access="hasRealm('Sponsor')">
+			<acme:menu-suboption code="master.menu.sponsor.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.campaigns" action="/any/campaign/list">
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.sponsorships" action="/any/sponsorship/list">
 		</acme:menu-option>
 	</acme:menu-left>
 
