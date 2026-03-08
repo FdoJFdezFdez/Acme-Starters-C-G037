@@ -338,10 +338,9 @@
         
         
         
-<<<<<<< HEAD
+
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/acme-framework"/>
-=======
->>>>>>> stash
+
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
         
@@ -587,3 +586,4 @@
 
 
 </project-modules>
+
