@@ -47,10 +47,17 @@
 			<acme:menu-suboption code="master.menu.sponsor.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.inventor" access="hasRealm('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.campaigns" action="/any/campaign/list">
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.sponsorships" action="/any/sponsorship/list">
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.inventions" action="/any/invention/list">
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.auditor" access="hasRealm('Auditor')">

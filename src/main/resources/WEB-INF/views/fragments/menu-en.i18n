@@ -40,6 +40,15 @@ master.menu.spokesperson.favourite-link = Favourite link
 
 master.menu.campaigns = Campaigns
 
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.favourite-link = Favourite link
+
+# master.menu.inventions ##########################################################
+
+master.menu.inventions = Inventions
+
 # master.menu.sponsor ##########################################################
 
 master.menu.sponsor = Sponsor
