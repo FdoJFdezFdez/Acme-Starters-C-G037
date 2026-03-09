@@ -40,6 +40,15 @@ master.menu.spokesperson.favourite-link = Favourite link
 
 master.menu.campaigns = Campaigns
 
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.favourite-link = Favourite link
+
+# master.menu.inventions ##########################################################
+
+master.menu.inventions = Inventions
+
 # master.menu.sponsor ##########################################################
 
 master.menu.sponsor = Sponsor
@@ -48,6 +57,15 @@ master.menu.sponsor.favourite-link = Favourite link
 # master.menu.sponsorships ##########################################################
 
 master.menu.sponsorships = Sponsorships
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.favourite-link = Favourite link
+
+# master.menu.audit-reports ##########################################################
+
+master.menu.audit-reports = Reports
 
 # master.menu.user-account ####################################################
 
