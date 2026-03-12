@@ -5,6 +5,9 @@ acme.validation.invalid-text = El texto no es válido
 acme.validation.campaign.invalidinterval.message = El intervalo de tiempo no es válido
 acme.validation.campaign.hasmilestone.message = La campaña no tiene hitos asociados
 
+acme.validation.invention.invalidinterval.message = El intervalo de tiempo no es válido
+acme.validation.invention.haspart.message = La invención no tiene partes asociados
+
 acme.validation.sponsorship.invalidinterval.message = El intervalo de tiempo no es válido
 acme.validation.sponsorship.hasdonation.message = El patrocinio no tiene donaciones asociadas
 
@@ -12,5 +15,6 @@ acme.validation.audit-report.invalidinterval.message = El intervalo de tiempo no
 acme.validation.audit-report.hassection.message = El reporte no tiene secciones asociadas
 
 acme.validation.campaign.uniqueticker.message = La referencia ya existe
+acme.validation.invention.uniqueticker.message = La referencia ya existe
 acme.validation.sponsorship.uniqueticker.message = La referencia ya existe
 acme.validation.audit-report.uniqueticker.message = La referencia ya existe
