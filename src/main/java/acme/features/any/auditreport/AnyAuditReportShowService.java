@@ -41,6 +41,6 @@ public class AnyAuditReportShowService extends AbstractService<Any, AuditReport>
 	public void unbind() {
 		super.unbindObject(this.auditReport, //
 			"ticker", "name", "description", "startMoment", //
-			"endMoment", "auditor.identity.fullName");
+			"endMoment", "moreInfo", "auditor.identity.fullName");
 	}
 }

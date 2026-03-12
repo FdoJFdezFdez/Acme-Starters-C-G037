@@ -8,5 +8,9 @@ acme.validation.campaign.hasmilestone.message = La campaña no tiene hitos asoci
 acme.validation.sponsorship.invalidinterval.message = El intervalo de tiempo no es válido
 acme.validation.sponsorship.hasdonation.message = El patrocinio no tiene donaciones asociadas
 
+acme.validation.audit-report.invalidinterval.message = El intervalo de tiempo no es válido
+acme.validation.audit-report.hassection.message = El reporte no tiene secciones asociadas
+
 acme.validation.campaign.uniqueticker.message = La referencia ya existe
 acme.validation.sponsorship.uniqueticker.message = La referencia ya existe
+acme.validation.audit-report.uniqueticker.message = La referencia ya existe
