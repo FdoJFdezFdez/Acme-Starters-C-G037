@@ -22,6 +22,7 @@ import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
+import acme.constraints.ValidReport;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
 import acme.realms.Auditor;
@@ -31,6 +32,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidReport
 public class AuditReport extends AbstractEntity {
 
 	// Serialisation version
@@ -87,7 +89,7 @@ public class AuditReport extends AbstractEntity {
 	@Transient
 	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
-			return null;
+			return 0.;
 
 		return MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
 	}
