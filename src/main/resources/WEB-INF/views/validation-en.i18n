@@ -18,3 +18,6 @@ acme.validation.campaign.uniqueticker.message = The ticker already exists
 acme.validation.invention.uniqueticker.message = The ticker already exists
 acme.validation.sponsorship.uniqueticker.message = The ticker already exists
 acme.validation.audit-report.uniqueticker.message = The ticker already exists
+
+acme.validation.campaign.startmomentinfuture.message = The start moment must be in the future
+acme.validation.campaign.endmomentinfuture.message = The end moment must be in the future

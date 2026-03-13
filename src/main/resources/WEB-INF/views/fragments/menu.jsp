@@ -56,6 +56,7 @@
 		<acme:menu-option code="master.menu.spokesperson" access="hasRealm('Spokesperson')">
 			<acme:menu-suboption code="master.menu.spokesperson.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.spokesperson.campaigns" action="/spokesperson/campaign/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sponsor" access="hasRealm('Sponsor')">
