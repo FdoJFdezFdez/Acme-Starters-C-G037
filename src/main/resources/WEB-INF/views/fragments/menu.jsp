@@ -40,10 +40,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.audit-reports" action="/any/audit-report/list"/>
-			<acme:menu-suboption code="master.menu.campaigns" action="/any/campaign/list"/>
-			<acme:menu-suboption code="master.menu.sponsorships" action="/any/sponsorship/list"/>
-			<acme:menu-suboption code="master.menu.inventions" action="/any/invention/list"/>
+			<acme:menu-suboption code="master.menu.any.list-audit-reports" action="/any/audit-report/list"/>
+			<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list"/>
+			<acme:menu-suboption code="master.menu.any.list-sponsorships" action="/any/sponsorship/list"/>
+			<acme:menu-suboption code="master.menu.any.list-inventions" action="/any/invention/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
