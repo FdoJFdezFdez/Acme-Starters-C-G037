@@ -18,7 +18,14 @@
 
 <acme:menu-bar>
 	<acme:menu-left>
-		<acme:menu-option code="master.menu.anonymous">
+		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.any.list-audit-reports" action="/any/audit-report/list" access="!hasRealm('Auditor')"/>
+			<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list" access="!hasRealm('Spokesperson')"/>
+			<acme:menu-suboption code="master.menu.any.list-sponsorships" action="/any/sponsorship/list" access="!hasRealm('Sponsor')"/>
+			<acme:menu-suboption code="master.menu.any.list-inventions" action="/any/invention/list" access="!hasRealm('Inventor')"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.any.list-audit-reports" action="/any/audit-report/list" access="!hasRealm('Auditor')"/>
 			<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list" access="!hasRealm('Spokesperson')"/>
 			<acme:menu-suboption code="master.menu.any.list-sponsorships" action="/any/sponsorship/list" access="!hasRealm('Sponsor')"/>
