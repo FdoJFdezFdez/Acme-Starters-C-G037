@@ -5,7 +5,7 @@
 <acme:list>
 	<acme:list-column code="fundraiser.tactic.list.label.name"  path="name"  width="40%"/>
 	<acme:list-column code="fundraiser.tactic.list.label.expectedPercentage" path="expectedPercentage" width="30%"/>
-	<acme:list-column code="fundraiser.tactic.list.label.tacicKind"  path="kind"  width="30%"/>
+	<acme:list-column code="fundraiser.tactic.list.label.tacticKind"  path="tacticKind"  width="30%"/>
 </acme:list>
 
 <jstl:if test="${showCreate == true}">

@@ -3,10 +3,10 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:form-textbox  code="fundraiser.tactic.form.label.name"  path="name"/>
+	<acme:form-textbox code="fundraiser.tactic.form.label.name" path="name"/>
 	<acme:form-textarea code="fundraiser.tactic.form.label.notes" path="notes"/>
-	<acme:form-double    code="fundraiser.tactic.form.label.expectedPercentage" path="expectedPercentage"/>
-	<acme:form-select   code="fundraiser.tactic.form.label.tacticKind"  path="kind" choices="${kinds}"/>
+	<acme:form-double code="fundraiser.tactic.form.label.expectedPercentage" path="expectedPercentage"/>
+	<acme:form-select code="fundraiser.tactic.form.label.tacticKind" path="tacticKind" choices="${kinds}"/>
 
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
