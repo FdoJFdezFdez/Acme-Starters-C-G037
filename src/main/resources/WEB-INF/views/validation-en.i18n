@@ -24,3 +24,6 @@ acme.validation.campaign.endmomentinfuture.message = The end moment must be in t
 
 acme.validation.sponsorship.startmomentinfuture.message = The start moment must be in the future
 acme.validation.sponsorship.endmomentinfuture.message = The end moment must be in the future
+
+acme.validation.strategy.duplicated-ticker.message = The strategy is duplicated
+acme.validation.strategy.dates.error = Start/end moments must define a valid time interval
