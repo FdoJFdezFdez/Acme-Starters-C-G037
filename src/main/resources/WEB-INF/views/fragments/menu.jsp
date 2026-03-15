@@ -74,6 +74,11 @@
 			<acme:menu-suboption code="master.menu.auditor.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-separator/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
+			<acme:menu-suboption code="master.menu.fundraiser.list-my-strategies" action="/fundraiser/strategy/list"/>
+		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>		

@@ -1,0 +1,57 @@
+
+package acme.features.fundraiser.tactic;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import acme.client.services.AbstractService;
+import acme.entities.strategy.Tactic;
+import acme.realms.Fundraiser;
+
+public class FundraiserTacticDeleteService extends AbstractService<Fundraiser, Tactic> {
+
+	@Autowired
+	private FundraiserTacticRepository	repository;
+
+	private Tactic						tactic;
+
+
+	@Override
+	public void load() {
+		int id;
+		id = super.getRequest().getData("id", int.class);
+
+		this.tactic = this.repository.findTacticById(id);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+
+		status = this.tactic.getStrategy() != null && //
+			this.tactic.getStrategy().getFundraiser().isPrincipal() && //
+			this.tactic.getStrategy().getDraftMode();
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+	}
+
+	@Override
+	public void validate() {
+
+	}
+
+	@Override
+	public void execute() {
+		this.repository.delete(this.tactic);
+	}
+
+	@Override
+	public void unbind() {
+		//To-do
+	}
+
+}
