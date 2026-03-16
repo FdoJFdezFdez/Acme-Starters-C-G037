@@ -61,8 +61,10 @@ master.menu.auditor.favourite-link = Favourite link
 master.menu.auditor.audit-reports = My audit reports
 master.menu.any.list-audit-reports = List reports
 
-#Strategy ################################################################
+# Strategies #########################################################
 
+master.menu.fundraiser = Fundraiser
+master.menu.fundraiser.list-my-strategies = My strategies
 master.menu.any.list-strategies = List strategies
 
 
