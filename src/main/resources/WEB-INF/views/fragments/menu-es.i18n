@@ -10,10 +10,10 @@
 
 # Any #######################################################
 
-master.menu.anonymous = Anónimo
+master.menu.anonymous = Cualquiera
 master.menu.anonymous.favourite-link = Enlace favorito
 
-master.menu.authenticated = Autenticado
+master.menu.authenticated = Cualquiera
 
 # master.menu.administrator ###################################################
 
