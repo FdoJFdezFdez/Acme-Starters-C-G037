@@ -1,21 +1,21 @@
 
-package acme.features.any.auditreport;
+package acme.features.auditor.auditreport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.audits.AuditReport;
+import acme.realms.Auditor;
 
 @Service
-public class AnyAuditReportShowService extends AbstractService<Any, AuditReport> {
+public class AuditorReportShowService extends AbstractService<Auditor, AuditReport> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyAuditReportRepository	repository;
+	private AuditorReportRepository	repository;
 
-	private AuditReport					auditReport;
+	private AuditReport				report;
 
 	// AbstractService interface -------------------------------------------
 
@@ -25,22 +25,23 @@ public class AnyAuditReportShowService extends AbstractService<Any, AuditReport>
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		this.auditReport = this.repository.findAuditReportById(id);
+		this.report = this.repository.findReportById(id);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.auditReport != null;
+		status = this.report != null && this.report.getAuditor().isPrincipal();
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.auditReport, //
+		super.unbindObject(this.report, //
 			"ticker", "name", "description", "startMoment", //
-			"endMoment", "moreInfo", "auditor.identity.fullName");
+			"endMoment", "moreInfo", "draftMode", "monthsActive", "hours");
 	}
+
 }

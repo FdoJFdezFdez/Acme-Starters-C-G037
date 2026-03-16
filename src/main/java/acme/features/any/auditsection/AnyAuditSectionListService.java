@@ -38,7 +38,7 @@ public class AnyAuditSectionListService extends AbstractService<Any, AuditSectio
 	public void authorise() {
 		boolean status;
 
-		status = this.auditReport != null && this.auditSections != null && !this.auditReport.getDraftMode();
+		status = this.auditReport != null && this.auditSections != null;
 
 		super.setAuthorised(status);
 	}

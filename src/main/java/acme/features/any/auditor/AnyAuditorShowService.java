@@ -36,7 +36,7 @@ public class AnyAuditorShowService extends AbstractService<Any, Auditor> {
 	public void authorise() {
 		boolean status;
 
-		status = this.auditor != null && this.auditReport != null && !this.auditReport.getDraftMode();
+		status = this.auditor != null;
 
 		super.setAuthorised(status);
 	}
