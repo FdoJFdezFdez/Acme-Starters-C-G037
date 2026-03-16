@@ -33,9 +33,7 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 	public void authorise() {
 		boolean status;
 
-		status = this.strategy != null && //
-			this.strategy.getDraftMode() && //
-			this.strategy.getFundraiser().isPrincipal();
+		status = this.strategy != null && this.strategy.getDraftMode() && this.strategy.getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -49,13 +47,15 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 	public void validate() {
 
 		super.validateObject(this.strategy);
+
 		{
 			Collection<Tactic> tactics;
-			boolean hasTacticts;
+			boolean hasTactics;
 
 			tactics = this.repository.findTacticsByStrategyId(this.strategy.getId());
-			hasTacticts = tactics != null && !tactics.isEmpty();
-			super.state(hasTacticts, "expectedPercentage", "acme.validation.strategy.tactics.error.message");
+			hasTactics = tactics != null && !tactics.isEmpty();
+
+			super.state(hasTactics, "*", "acme.validation.strategy.tactics.error.message");
 		}
 
 		{
@@ -65,9 +65,12 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 
 			start = this.strategy.getStartMoment();
 			end = this.strategy.getEndMoment();
+
 			validInterval = start != null && end != null && MomentHelper.isAfter(end, start);
+
 			super.state(validInterval, "startMoment", "acme.validation.strategy.dates.error");
 		}
+
 		{
 			Date now;
 			Date start;
@@ -95,7 +98,7 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.strategy, "ticker", "name", "startMoment", "endMoment", "draftMode");
+		super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "expectedPercentage");
 	}
 
 }
