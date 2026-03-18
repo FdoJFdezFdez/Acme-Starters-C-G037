@@ -19,6 +19,7 @@ import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MathHelper;
@@ -100,6 +101,7 @@ public class Sponsorship extends AbstractEntity {
 	}
 
 	@Mandatory
+	@ValidMoney
 	@Transient
 	public Money getTotalMoney() {
 		Double total = this.repository.computeTotalMoney(this.getId());
