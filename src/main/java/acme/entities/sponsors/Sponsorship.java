@@ -20,7 +20,6 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MathHelper;
 import acme.client.helpers.MomentHelper;
@@ -89,7 +88,6 @@ public class Sponsorship extends AbstractEntity {
 
 	@Mandatory
 	// @Valid // HINT: Eclipse's validator forbids this annotation here.
-	@ValidNumber
 	@Transient
 	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
