@@ -36,7 +36,15 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			existingStrategy = this.repository.findStrategyByTicker(strategy.getTicker());
 			uniqueStrategy = existingStrategy == null || existingStrategy.equals(strategy);
 
-			super.state(context, uniqueStrategy, "ticker", "acme.validation.strategy.duplicated-ticker.message");
+			super.state(context, uniqueStrategy, "ticker", "acme.validation.strategy.uniqueticker.message");
+		}
+
+		{
+			boolean hasTactic;
+
+			hasTactic = strategy.getDraftMode() || this.repository.countTacticsByStrategy(strategy.getId()) != 0;
+
+			super.state(context, hasTactic, "*", "acme.validation.strategy.tactics.error.message");
 		}
 
 		if (strategy.getDraftMode().equals(Boolean.FALSE)) {
