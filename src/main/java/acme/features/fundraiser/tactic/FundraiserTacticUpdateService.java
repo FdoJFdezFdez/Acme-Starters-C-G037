@@ -63,7 +63,7 @@ public class FundraiserTacticUpdateService extends AbstractService<Fundraiser, T
 
 		tuple.put("tacticKinds", choices);
 		tuple.put("strategyId", this.tactic.getStrategy().getId());
-		tuple.put("published", !this.tactic.getStrategy().getDraftMode());
+		tuple.put("draftMode", this.tactic.getStrategy().getDraftMode());
 
 		super.getResponse().addData(tuple);
 	}
