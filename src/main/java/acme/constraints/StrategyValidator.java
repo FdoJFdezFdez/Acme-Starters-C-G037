@@ -1,8 +1,6 @@
 
 package acme.constraints;
 
-import java.util.Date;
-
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,33 +37,26 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			super.state(context, uniqueStrategy, "ticker", "acme.validation.strategy.uniqueticker.message");
 		}
 
-		{
-			boolean hasTactic;
+		if (strategy.getDraftMode() != null && strategy.getDraftMode().equals(Boolean.FALSE)) {
+			{
+				boolean validInterval;
 
-			hasTactic = strategy.getDraftMode() || this.repository.countTacticsByStrategy(strategy.getId()) != 0;
+				if (strategy.getStartMoment() != null && strategy.getEndMoment() != null)
+					validInterval = MomentHelper.isAfterOrEqual(strategy.getEndMoment(), strategy.getStartMoment());
+				else
+					validInterval = false;
 
-			super.state(context, hasTactic, "*", "acme.validation.strategy.tactics.error.message");
+				super.state(context, validInterval, "*", "acme.validation.strategy.invalidinterval.message");
+			}
+			{
+				boolean hasTactics;
+				hasTactics = this.repository.existsById(strategy.getId());
+
+				super.state(context, hasTactics, "*", "acme.validation.strategy.hasTactics.message");
+			}
 		}
-
-		if (strategy.getDraftMode().equals(Boolean.FALSE)) {
-			boolean validTime;
-			Date start;
-			Date end;
-
-			start = strategy.getStartMoment();
-			end = strategy.getEndMoment();
-
-			if (start != null && end != null)
-				validTime = MomentHelper.isAfter(end, start);
-			else
-				validTime = false;
-
-			super.state(context, validTime, "startMoment", "acme.validation.strategy.dates.error");
-		}
-
 		result = !super.hasErrors(context);
 
 		return result;
 	}
-
 }
