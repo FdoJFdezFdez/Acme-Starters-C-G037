@@ -34,10 +34,6 @@ public class AuditorSectionCreateService extends AbstractService<Auditor, AuditS
 		report = this.repository.findReportById(reportId);
 
 		this.section = super.newObject(AuditSection.class);
-		this.section.setName("");
-		this.section.setNotes("");
-		this.section.setHours(0);
-		this.section.setKind(SectionKind.PRELIMINARY);
 		this.section.setAuditReport(report);
 	}
 
