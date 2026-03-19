@@ -20,6 +20,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MathHelper;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidStrategy;
@@ -75,7 +76,7 @@ public class Strategy extends AbstractEntity {
 		if (this.startMoment == null || this.endMoment == null)
 			return 0.0;
 		double duration = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
-		return Math.round(duration * 100.0) / 100.0;
+		return MathHelper.roundOff(duration, 2);
 	}
 
 
