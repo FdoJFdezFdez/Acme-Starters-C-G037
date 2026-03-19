@@ -9,7 +9,7 @@ any.audit-report.form.label.auditor = Auditor:
 any.audit-report.form.label.description = Descripción:
 any.audit-report.form.label.startmoment = Momento de inicio:
 any.audit-report.form.label.endmoment = Momento de fin:
-any.audit-report.form.label.moreinfo = Más información: (Opcional)
+any.audit-report.form.label.moreInfo = Más información: (Opcional)
 
 any.audit-report.form.button.audit-sections = Secciones
 any.audit-report.form.button.auditor = Auditor
